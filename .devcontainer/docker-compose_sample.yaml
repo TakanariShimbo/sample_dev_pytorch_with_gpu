@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  dev_pytorch_server:
+    ######
+    # xxxx -> username of docker account
+    ######
+    image: xxxx/pytorch-python310-cudnn8-devel-ubuntu22.04:v1.0.0
+    container_name: container_dev_pytorch
+    # For jupyter
+    ports:
+      - 8888:8888
+    volumes:
+      - ./../work:/root/work
+    working_dir: /root/work
+    # For GPU
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
+    # For keep running container
+    tty: true
