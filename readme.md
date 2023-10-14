@@ -8,12 +8,12 @@
 1. Build Image  
     ```
     # xxxx -> Dockerアカウントのユーザ名
-    docker build ./ -t xxxx/pytorch-python310-cudnn8-devel-ubuntu22.04:v1.0.0
+    docker build -f Dockerfile -t xxxx/pytorch-python310-cudnn8-devel-ubuntu22.04:v1.0.0 .
     ```
 
 2. Create docker-compose.yaml  
-    .devcontainer の docker-compose_sample.yaml をコピーし、docker-compose.yaml に名前を変更する  
-    docker-compose.yaml 内の xxxx も上記同様にDockerアカウントのユーザ名に変更する  
+    .devcontainer の docker-compose_sample.yaml を docker-compose.yaml という名前で複製する  
+    docker-compose.yaml 内の xxxx も 1.Build Image 同様にDockerアカウントのユーザ名に変更する  
 
 # DevContainer の利用開始
 ```
@@ -22,10 +22,7 @@
 # VS Code の場合
 #左下の><をクリックし、コンテナで再度開くを選択
 
-# 2. 仮想環境アクティベート
-# 右下から次の仮想環境を使用するように選択: /work/myenv/bin/python3
-
-# 3. 利用開始
+# 2. 利用開始
 # VS Code の場合はそのまま開発開始
 # jupyter の場合は以下コマンド実行
 jupyter lab --ip 0.0.0.0 --no-browser --allow-root

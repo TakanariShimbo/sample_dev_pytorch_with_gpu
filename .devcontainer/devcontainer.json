@@ -1,6 +1,6 @@
 {
   "name": "Dev Pytorch",
-  "dockerComposeFile": ["docker-compose.yml"],
+  "dockerComposeFile": ["docker-compose.yaml"],
   "service": "dev_pytorch_server",
   "extensions": [
     "ms-python.black-formatter",

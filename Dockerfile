@@ -32,7 +32,7 @@ RUN apt-get install -y python3-pip
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
 
-# install librarys
+# sample install librarys
 RUN pip install jupyter
 RUN pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 RUN pip install timm
