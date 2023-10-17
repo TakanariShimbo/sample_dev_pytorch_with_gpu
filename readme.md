@@ -34,6 +34,7 @@
 # イメージの更新
 1. Edit Dockerfile
     ```
+    Dockerfiles の UpdateDockerfile_sample を UpdateDockerfile という名前で複製する 
     UpdateDockerFile の中身を更新する
     xxxx: Dockerアカウントのユーザ名
     yyyy: 現在のImageのバージョン ex v1.0.2
