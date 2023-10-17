@@ -8,7 +8,7 @@
 1. Build Image  
     ```
     # xxxx -> Dockerアカウントのユーザ名
-    docker build -f OrigianalDockerfile -t xxxx/pytorch-python310-cudnn8-devel-ubuntu22.04:v1.0.0 ./Dockerfiles
+    docker build -f ./Dockerfiles/OrigianalDockerfile -t xxxx/pytorch-python310-cudnn8-devel-ubuntu22.04:v1.0.0 .
     ```
 
 2. Create docker-compose.yaml  
@@ -45,7 +45,7 @@
     ```
     # xxxx -> Dockerアカウントのユーザ名
     # yyyy -> 更新後のImageのバージョン ex v1.0.3
-    docker build -f UpdateDockerfile -t xxxx/pytorch-python310-cudnn8-devel-ubuntu22.04:yyyy ./Dockerfiles
+    docker build -f ./Dockerfiles/UpdateDockerfile -t xxxx/pytorch-python310-cudnn8-devel-ubuntu22.04:yyyy .
     ```
 
 3. Modify docker-compose.yaml  
