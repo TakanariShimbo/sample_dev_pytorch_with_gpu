@@ -1,0 +1,11 @@
+# xxxx: username
+# yyyy: tag
+FROM xxxx/pytorch-python310-cudnn8-devel-ubuntu22.04:v1.0.0
+
+# SH -> BASH
+SHELL ["/bin/bash", "-c"]
+
+# write add librarys below
+# zzzz: libraryname
+# RUN pip install zzzz1
+# RUN pip install zzzz2

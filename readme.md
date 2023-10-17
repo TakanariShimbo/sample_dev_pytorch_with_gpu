@@ -8,25 +8,49 @@
 1. Build Image  
     ```
     # xxxx -> Dockerアカウントのユーザ名
-    docker build -f Dockerfile -t xxxx/pytorch-python310-cudnn8-devel-ubuntu22.04:v1.0.0 .
+    docker build -f OrigianalDockerfile -t xxxx/pytorch-python310-cudnn8-devel-ubuntu22.04:v1.0.0 ./Dockerfiles
     ```
 
 2. Create docker-compose.yaml  
+    ```
     .devcontainer の docker-compose_sample.yaml を docker-compose.yaml という名前で複製する  
     docker-compose.yaml 内の xxxx も 1.Build Image 同様にDockerアカウントのユーザ名に変更する  
+    ```
 
 # DevContainer の利用開始
-```
-# 1. コンテナを起動しターミナルに入る
+1. コンテナを起動しターミナルに入る
+    ```
+    # VS Code の左下の><をクリックし、コンテナで再度開くを選択
+    ```
 
-# VS Code の場合
-#左下の><をクリックし、コンテナで再度開くを選択
+2. 利用開始
+    ```
+    # VS Code の場合はそのまま開発開始
+    
+    # jupyter の場合は以下コマンド実行
+    jupyter lab --ip 0.0.0.0 --no-browser --allow-root
+    ```
 
-# 2. 利用開始
-# VS Code の場合はそのまま開発開始
-# jupyter の場合は以下コマンド実行
-jupyter lab --ip 0.0.0.0 --no-browser --allow-root
-```
+# イメージの更新
+1. Edit Dockerfile
+    ```
+    UpdateDockerFile の中身を更新する
+    xxxx: Dockerアカウントのユーザ名
+    yyyy: 現在のImageのバージョン ex v1.0.2
+    zzzz: 追加でインストールするライブラリ ex pandas
+    ```
+
+2. Build Image  
+    ```
+    # xxxx -> Dockerアカウントのユーザ名
+    # yyyy -> 更新後のImageのバージョン ex v1.0.3
+    docker build -f UpdateDockerfile -t xxxx/pytorch-python310-cudnn8-devel-ubuntu22.04:yyyy ./Dockerfiles
+    ```
+
+3. Modify docker-compose.yaml  
+    ```
+    docker-compose.yaml 内の image のタグをビルドしたバージョンに変更する
+    ```
 
 # コマンドメモ
 ```
