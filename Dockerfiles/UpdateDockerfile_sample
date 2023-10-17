@@ -1,6 +1,6 @@
 # xxxx: username
 # yyyy: tag
-FROM xxxx/pytorch-python310-cudnn8-devel-ubuntu22.04:v1.0.0
+FROM xxxx/pytorch-python310-cudnn8-devel-ubuntu22.04:yyyy
 
 # SH -> BASH
 SHELL ["/bin/bash", "-c"]
