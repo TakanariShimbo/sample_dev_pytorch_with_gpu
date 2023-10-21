@@ -42,3 +42,6 @@ RUN pip install opencv-python
 RUN pip install matplotlib
 RUN pip install plotly
 RUN pip install scipy
+
+# copy jupyter_lab_config.py
+COPY ./Dockerfiles/jupyter_lab_config.py /root/.jupyter/jupyter_lab_config.py
